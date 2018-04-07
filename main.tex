@@ -1,0 +1,120 @@
+\documentclass[20pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Calculus}
+\author{Zack Ni }
+\date{April 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Proof the variance of T-distribution is $\frac{n}{n-2}$}
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{\Gamma({\frac{n+1}{2}})}{\Gamma({\frac{n}{2}})} \frac{1}{\sqrt{n\pi}} \frac{1}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = 1$ }
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{1}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = \frac{\Gamma({\frac{n}{2}})}{\Gamma({\frac{n+1}{2}})}  \sqrt{n\pi} $ }
+
+{\fontsize{10}{10}\selectfont Consider the Following integral, which is, technically, E[$X^2$]}
+
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{\Gamma({\frac{n+1}{2}})}{\Gamma({\frac{n}{2}})} \frac{1}{\sqrt{n\pi}} \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = C$ }
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = \frac{\Gamma({\frac{n}{2}})}{\Gamma({\frac{n+1}{2}})}  \sqrt{n\pi} C $ }
+
+{\fontsize{20}{20}\selectfont 
+ Let $u = x$, then $dv = x (1+\frac{x^2}{n})^{\frac{-n-1}{2}} dx $ }
+ 
+{\fontsize{10}{10}\selectfont By Common Sense,}
+
+ {\fontsize{20}{20}\selectfont 
+  $du = dx$, then $v = \frac{n}{1-n} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} $ }
+
+
+{\fontsize{10}{10}\selectfont Therefore,}
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = uv - \int_{-\infty}^{\infty} v du = x\frac{n}{1-n} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} - \int_{-\infty}^{\infty} \frac{n}{1-n} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}}dx$}
+
+{\fontsize{10}{10}\selectfont Easy to see $uv=0$, since $\frac{n-1}{2} > 1$}
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = \int_{-\infty}^{\infty} \frac{n}{n-1} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}}dx$}
+
+{\fontsize{20}{20}\selectfont 
+ Let $\frac{u^2}{n-2} = \frac{x^2}{n}$, then $\frac{2udu}{n-2} = \frac{2xdx}{n} $, so $du = \sqrt{\frac{n-2}{n}}dx$ }
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx \\ = \int_{-\infty}^{\infty} \frac{n}{n-1} \frac{1}{(1+\frac{u^2}{n-2})^{\frac{n-1}{2}}} \sqrt{\frac{n}{n-2}} du \\ = \frac{n}{n-1} \sqrt{\frac{n}{n-2}}  \int_{-\infty}^{\infty}  \frac{1}{(1+\frac{u^2}{n-2})^{\frac{n-1}{2}}}du $}
+
+
+{\fontsize{10}{10}\selectfont At the very beginning we can find the formula for $\int_{-\infty}^{\infty}  \frac{1}{(1+\frac{u^2}{n-2})^{\frac{n-2}{2}}}du$,}
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{  \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx  = \frac{n}{n-1} \sqrt{\frac{n}{n-2}}  \frac{\Gamma({\frac{n-2}{2}})}{\Gamma({\frac{n-1}{2}})}  \sqrt{(n-2)\pi} $}
+
+{\fontsize{10}{10}\selectfont Plug back to find C,}
+
+{\fontsize{20}{20}\selectfont 
+$\frac{n}{n-1} \sqrt{\frac{n}{n-2}}  \frac{\Gamma({\frac{n-2}{2}})}{\Gamma({\frac{n-1}{2}})}  \sqrt{(n-2)\pi} =  \frac{\Gamma({\frac{n}{2}})}{\Gamma({\frac{n+1}{2}})}  \sqrt{n\pi} C$}
+
+{\fontsize{20}{20}\selectfont 
+Since $\frac{\Gamma({\frac{n-2}{2}})}{\Gamma({\frac{n}{2}})} = \frac{2}{n-2}$ and $\frac{\Gamma({\frac{n+1}{2}})}{\Gamma({\frac{n-1}{2}})} = \frac{n-1}{2}$}
+
+{\fontsize{20}{20}\selectfont 
+Therefore $C = \frac{n}{n-1} \frac{2}{n-2} \frac{n-1}{2} = \frac{n}{n-2}$}
+
+
+\section{Proof the variance of T-distribution is $\frac{n}{n-2}$}
+
+\section{Show that the kurtosis and skewness T-distribution }
+
+{\fontsize{10}{10}\selectfont Clearly skewness of T-distribution is zero,}
+
+{\fontsize{10}{10}\selectfont For kurtosis consider the following integeral,}
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{\Gamma({\frac{n+1}{2}})}{\Gamma({\frac{n}{2}})} \frac{1}{\sqrt{n\pi}} \frac{x^4}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = D$ }
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{x^4}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx =\frac{\Gamma({\frac{n}{2}})}{\Gamma({\frac{n+1}{2}})} \sqrt{n\pi} D$ }
+
+
+{\fontsize{20}{20}\selectfont 
+ Let $u = x^3$, then $dv = x (1+\frac{x^2}{n})^{\frac{-n-1}{2}} dx $ }
+
+{\fontsize{10}{10}\selectfont By Common Sense,}
+
+ {\fontsize{20}{20}\selectfont 
+  $du = 3x^2dx$, then $v = \frac{n}{1-n} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} $ }
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{x^4}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = uv - \int_{-\infty}^{\infty} v du \\ = x^3 \frac{n}{1-n} \frac{1}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} +  3 \int_{-\infty}^{\infty} \frac{n}{n-1} \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} dx$}
+
+
+
+{\fontsize{20}{20}\selectfont 
+$\int_{-\infty}^{\infty}{ \frac{x^4}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx = uv - \int_{-\infty}^{\infty} v du \\ = 3  \frac{n}{n-1} \int_{-\infty}^{\infty} \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} dx$}
+
+
+{\fontsize{20}{20}\selectfont 
+ Let $\frac{u^2}{n-2} = \frac{x^2}{n}$, then $\frac{2udu}{n-2} = \frac{2xdx}{n} $, so $du = \sqrt{\frac{n-2}{n}}dx$ }
+ 
+ 
+{\fontsize{20}{20}\selectfont $ \int_{-\infty}^{\infty} \frac{x^2}{(1+\frac{x^2}{n})^{\frac{n-1}{2}}} dx = \sqrt{\frac{n}{n-2}} \frac{n}{n-2} \int_{-\infty}^{\infty}  \frac{u^2}{(1+\frac{u^2}{n-2})^{\frac{n-1}{2}}} du $
+}
+
+{\fontsize{10}{10}\selectfont Related to previous knowledge,}
+
+{\fontsize{20}{20}\selectfont $\int_{-\infty}^{\infty} \frac{u^2}{(1+\frac{u^2}{n-2})^{\frac{n-1}{2}}} du = \frac{n-2}{n-3} \sqrt{\frac{n-2}{n-4}}  \frac{\Gamma({\frac{n-4}{2}})}{\Gamma({\frac{n-3}{2}})}  \sqrt{(n-4)\pi}$}
+
+{\fontsize{20}{20}\selectfont $\int_{-\infty}^{\infty}{ \frac{x^4}{(1+\frac{x^2}{n})^{\frac{n+1}{2}}}}dx  = 3  \frac{n}{n-1} \frac{n-2}{n-3} \sqrt{\frac{n-2}{n-4}}  \frac{\Gamma({\frac{n-4}{2}})}{\Gamma({\frac{n-3}{2}})}  \sqrt{(n-4)\pi}$}
+
+{\fontsize{20}{20}\selectfont $\frac{\Gamma({\frac{n}{2}})}{\Gamma({\frac{n+1}{2}})} \sqrt{n\pi} D = 3  \frac{n}{n-1} \frac{n-2}{n-3} \sqrt{\frac{n-2}{n-4}}  \frac{\Gamma({\frac{n-4}{2}})}{\Gamma({\frac{n-3}{2}})}  \sqrt{(n-4)\pi}$}
+
+{\fontsize{10}{10}\selectfont I strongly doubt that my answer was wrong. :(}
+
+\end{document}
